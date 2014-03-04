@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shrubs - eFlashcards</title>
+</head>
+<body onload="randImg()"><div align="center" style="padding-top:25px">
+
+<script>
+var img = 0;
+var common = new Array("Rocky Mountain maple", "Saskatoon serviceberry", "Saskatoon serviceberry", "Saskatoon serviceberry", "mistletoe", "mistletoe", "big sagebrush", "kinnikinnick", "kinnikinnick", "bog birch", "mountain mahogany", "mountain mahogany", "rabbitbrush", "rabbitbrush", "virgin's bower", "redstem  dogwood", "redstem  dogwood", "mountain dryad", "mountain dryad", "cliffbush", "cliffbush", "common juniper", "common juniper", "common juniper", "bush honeysuckle", "Oregon grape", "Oregon grape", "prickly pear cactus", "ninebark", "shrubby cinquefoil", "antelope bitterbrush", "skunkbush", "skunkbush", "wax currant", "wild gooseberry", "wild gooseberry", "wild rose", "false raspberrry", "false raspberrry", "wild red raspberry", "willow", "willow", "elderberry", "buffalo-berry", "snowberry", "snowberry", "snowberry", "blueberries, whortleberries");
+var scientific = new Array("Acer glabrum", "Amelanchier alnifolia", "Amelanchier alnifolia", "Amelanchier alnifolia", "Arceuthobium spp", "Arceuthobium spp", "Artemisia tridentata", "Arctostaphylos uva-ursi", "Arctostaphylos uva-ursi", "Betula glandulosa", "Cercocarpus montanus", "Cercocarpus montanus", "Chrysothamnus spp", "Chrysothamnus spp", "Clematis columbiana", "Cornus stolonifera", "Cornus stolonifera", "Dryas octopetala", "Dryas octopetala", "Jamesia americana", "Jamesia americana", "Juniperus communis", "Juniperus communis", "Juniperus communis", "Lonicera involucrata", "Mahonia repens", "Mahonia repens", "Opuntia polyacantha", "Physocarpus monogynus", "Potentilla fruticosa", "Purshia tridentata", "Rhus trilobata", "Rhus trilobata", "Ribes cereum", "Ribes inerme", "Ribes inerme", "Rosa spp", "Rubus deliciosus", "Rubus deliciosus", "Rubus strigosus", "Salix spp.", "Salix spp.", "Sambucus racemosa", "Shepherdia canadensis", "Symphoricarpos albus", "Symphoricarpos albus", "Symphoricarpos albus", "Vaccinium spp.");
+var description = new Array("leaves simple, opposite, serrate, palmately lobed.  Fruit is a double samara (winged fruit).", "Leaves simple, alternate, upper half of leaf serrate, lower half (base) rounded w/o teeth. Excellent browse species for elk and deer", "Leaves simple, alternate, upper half of leaf serrate, lower half (base) rounded w/o teeth. Excellent browse species for elk and deer", "Leaves simple, alternate, upper half of leaf serrate, lower half (base) rounded w/o teeth. Excellent browse species for elk and deer", "small greenish-yellow parasitic plant which grows on the twigs and stems of certain conifers (lodgepole pine, ponderosa pine, Dougla-fir.  Can cause death of host tree.", "small greenish-yellow parasitic plant which grows on the twigs and stems of certain conifers (lodgepole pine, ponderosa pine, Dougla-fir.  Can cause death of host tree.", "Leaves simple, alternate, apex tridentate (three teeth), silvery color .  Sage odor.", "Leaves simple, alternate, persistent.   Fruit is a berry.  Plant is a low trailing shrub.", "Leaves simple, alternate, persistent.   Fruit is a berry.  Plant is a low trailing shrub.", "Leaves simple, alternate, roundish and dime-sized, crenate-serrate (blunt teeth).  Sandpapery feel to twigs.", "Leave simple, alternate, serrate on upper half, base wedge-shaped.  Plumose-tailed achene type fruit.", "Leave simple, alternate, serrate on upper half, base wedge-shaped.  Plumose-tailed achene type fruit.", "Leaves simple, narrowly linear.  Flowers are small yellow racemes", "Leaves simple, narrowly linear.  Flowers are small yellow racemes", "Leaves pinnately compound (trifoliolate).  Plant is a trailing or climbing vine.", "Leaves simple, opposite, with strong arcuate venation. Stems and twigs red.  Flowers in terminal clusters", "Leaves simple, opposite, with strong arcuate venation. Stems and twigs red.  Flowers in terminal clusters.", "", "", "Leaves simple, opposite, tomentose below (velvet feel to it).  Terminal flowers in clusters.", "Leaves simple, opposite, tomentose below (velvet feel to it).  Terminal flowers in clusters.", "leaves awl-shaped, small, whorls of three, very sharp.  Stomata (white lines) on underside of leaves.  A low lying shrub.  Small berry-like cones (similar to Rocky Mt. Juniper).", "leaves awl-shaped, small, whorls of three, very sharp.  Stomata (white lines) on underside of leaves.  A low lying shrub.  Small berry-like cones (similar to Rocky Mt. Juniper).", "leaves awl-shaped, small, whorls of three, very sharp.  Stomata (white lines) on underside of leaves.  A low lying shrub.  Small berry-like cones (similar to Rocky Mt. Juniper).", "Leaves simple, opposite, tiny hairs on margin.  Weak arcuate venation.  Stems square, hairy.  Flowers yellow.  Fruit in pairs.", "leaves pinnately compound (3-7 leaflets), persistent (evergreen), spiny margins (looks like holly)", "leaves pinnately compound (3-7 leaflets), persistent (evergreen), spiny margins (looks like holly)", "cactus leaves (pads) succuclent, with numerous thorns.  Flowers bright yellow.", "Leaves simple, alternate, palmately lobed. Flowers snall, white, in terminal clusters. Bark very shreddy.", "leaves palmately compound (5-7 leaflets), small, alternate, margin entire.  Flowers yellow.", "Leaves simple, alternate, small, with tridentate leaf tips.  Leaves odoriferous (dirty socks) when crushed", "Leaves trifoliolate (compound with 3 leaflets); each leaflet with 3 lobes. Leaves odoriferous when crushed.  Fruit is red.", "Leaves trifoliolate (compound with 3 leaflets); each leaflet with 3 lobes. Leaves odoriferous when crushed.  Fruit is red.", "Leaves simple, alternate, palmately lobed with shallow sinuses (often resemble clam shell). Leaves have pleasant odor.  No prickles on stem.  Flowers tubular, pink.  Fruit is edible.", "leaves simple, alternate, palmately lobed.  Stems have sharp prickles. Flowers in clusters of 2-3, pendent.  Fruit is edible", "leaves simple, alternate, palmately lobed.  Stems have sharp prickles. Flowers in clusters of 2-3, pendent.  Fruit is edible", "Leaves pinnately compound (3-7 leaflets), stipules conspicuous, adnate to petiole.  Stems with prickles", "Leaves simple, alternate, palmately lobed.  Flowers single, white, large. Stems without prickles, bark shreds in a single layer. Fruit is a bitter tasting raspberry.", "Leaves simple, alternate, palmately lobed.  Flowers single, white, large. Stems without prickles, bark shreds in a single layer. Fruit is a bitter tasting raspberry", "Leaves pinnately compound (3-7 leaflets); leaflets have wrinkled appearance.  Stipules like rabbit ears.  Stems have prickles.  Fruit is a tasty raspberry", "Leaves simple, alternate.  Buds with single, caplike scale.  Young twigs often brightly colored (yellow, green, gold), Flower is an erect catkin.  Usually a riparian plant", "Leaves simple, alternate.  Buds with single, caplike scale.  Young twigs often brightly colored (yellow, green, gold), Flower is an erect catkin.  Usually a riparian plant.", "Leaves pinnately compound, serrate margins", "Leaves simple, opposite, with rusty brown scales  (dots) on underside.  Fruit is red.", "Leaves simple, opposite, oval to ovate, entire margin.  Flowers and fruit white.", "Leaves simple, opposite, oval to ovate, entire margin.  Flowers and fruit white.", "Leaves simple, opposite, oval to ovate, entire margin.  Flowers and fruit white.", "Leaves simple, alternate, deciduous.  Bright green color.  Low shrub.  Berries edible.  Mostly in Spruce-fir community.");
+
+function randImg()
+{
+	img = Math.floor((Math.random()*48)+1);
+	document.getElementById("image").src = "shrubs/" + img + ".jpg";
+}
+
+function next()
+{
+	document.getElementById("flavor").innerHTML = "&nbsp;";
+	randImg();
+}
+
+function showFlavor()
+{
+	if (document.getElementById("nameType").value == "common")
+	{
+		document.getElementById("flavor").innerHTML = common[img-1];
+	}
+	if (document.getElementById("nameType").value == "scientific")
+	{
+		document.getElementById("flavor").innerHTML = scientific[img-1];
+	}
+	if (document.getElementById("nameType").value == "description")
+	{
+		document.getElementById("flavor").innerHTML = description[img-1];
+	}
+}
+</script>
+
+<div align="center"><a href="index.html" style="font-size:12px">Flashcards</a> <strong>eFlashcards</strong> <a href="../main/index.html" style="font-size:12px">Fieldguide</a></div>
+
+<div><form action="" method="get">
+<select id="nameType" name="nameType">
+<option value="common">Common Name</option>
+<option value="scientific">Scientific Name</option>
+<option value="description">Description</option>
+</select>
+
+<input type="button" onClick="showFlavor()" value="Reveal" />
+<input type="button" onClick="next()" value="Next" />
+</form></div>
+
+<p id="flavor">&nbsp;</p>
+
+<img src=" " id="image" />
+
+</div></body>
+</html>

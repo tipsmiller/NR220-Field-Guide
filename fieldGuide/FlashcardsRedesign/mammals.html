@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mammals - eFlashcards</title>
+</head>
+<body onload="randImg()"><div align="center" style="padding-top:25px">
+
+<script>
+var img = 0;
+var common = new Array("Abert's Squirrel", "American Pika", "Bighorn (Mountain) Sheep", "Bushy-tailed Woodrat", "Colorado Chipmunk", "Common Muskrat", "Deer Mouse", "Short-tailed Weasel, or Ermine", "American Marten", "American Badger", "Black Bear", "Beaver", "Bobcat", "Coyote", "Elk, or Wapiti", "Golden-mantled Ground Squirrel", "Least Chipmunk", "Moose", "Mountain Lion, or Puma", "Mule Deer", "Porcupine", "Racoon", "Red Fox", "Striped Skunk", "Long-tailed Vole", "Long-tailed Weasel", "Lynx", "Masked Shrew", "Mink", "Montaine Vole", "North American River Otter", "Northern Pocket Gopher", "Nuttall's (Mountain) Cottontail", "Red (Pine) Squirrel; (Chickaree)", "Snowshoe Hare", "Southern Red-backed Vole", "Northern Water Shrew", "Western Jumping Mouse", "Western Spotted Skunk", "White-tailed Jackrabbit", "Wyoming Ground Squirrel", "Yellow-bellied Marmot");
+var scientific = new Array("Sciurus aberti", "Ochotona princeps", "Ovis Canadensis", "Neotoma cinerea", "Tamias quadrivittatus", "Ondatra zibethicus", "Peromyscus maniculatus", "Mustela erminea", "Martes americana", "Taxidea taxus", "Ursus americanus", "Castor canadensis", "Lynx rufus", "Canis latrans", "Cervus elaphus", "Spermophilus lateralis", "Tamias minimus", "Alces alces", "Felis concolor", "Odocoileus hemionus", "Erithizon dorsatum", "Procyon lotor", "Vulpes vulpes", "Mephitis mephitis", "Microtus longicaudus", "Mustela frenata", "Lynx lynx", "Sorex cinereus", "Mustela vison", "Microtus montanus", "Lontra canadensis", "Thamomys talpoides", "Sylvilagus nuttallii", "Tamiasciurus hudsonicus", "Lepus Americanus", "Clethrionomys gapperi", "Sorex palustrus", "Zapus princeps", "Spilogale gracilis", "Lepus townsendii", "Spermophilus elegans", "Marmota flaviventris");
+var order = new Array("Rodentia", "Lagomorpha", "Artiodactyla", "Rodentia", "Rodentia", "Rodentia", "Rodentia", "Carnivora", "Carnivora", "Carnivora", "Carnivora", "Rodentia", "Carnivora", "Carnivora", "Artiodactyla", "Rodentia", "Rodentia", "Artiodactyla", "Carnivora", "Artiodactyla", "Rodentia", "Carnivora", "Carnivora", "Carnivora", "Rodentia", "Carnivora", "Carnivora", "Insectivora", "Carnivora", "Rodentia", "Carnivora", "Rodentia", "Lagomorpha", "Rodentia", "Lagomorpha", "Rodentia", "Insectivora", "Rodentia", "Carnivora", "Lagomorpha", "Rodentia", "Rodentia");
+var family = new Array("Sciuridae", "Ochotonidae", "Bovidae", "Muridae", "Sciuridae", "Muridae", "Muridae", "Mustelidae", "Mustelidae", "Mustelidae", "Ursidae", "Castoridae", "Felidae", "Canidae", "Cervidae", "Sciuridae", "Sciuridae", "Cervidae", "Felidae", "Cervidae", "Erithizontidae", "Procyonidae", "Canidae", "Mustelidae", "Muridae", "Mustelidae", "Felidae", "Soricidae", "Mustelidae", "Muridae", "Mustelidae", "Geomyidae", "Leporidae", "Sciuridae", "Leporidae", "Muridae", "Soricidae", "Zapodidae", "Mustelidae", "Leporidae", "Sciuridae", "Sciuridae");
+var occurence = new Array("Occasional", "Common", "Occasional", "Occasional", "Occasional", "Occasional", "Abundant", "Rare", "Occasional", "Occasional", "Occasional", "Common", "Occasional", "Common", "Abundant", "Abundant", "Common", "Reintroduced species in Colorado", "Rare", "Abundant", "Common", "Common", "Occasional", "Occasional", "Occasional", "Occasional", "Reintroduced species in Colorado", "Rare", "Rare", "Common", "Reintroduced species in Colorado", "Common", "Common", "Abundant", "Common", "Abundant", "Common", "Occasional", "Occasional", "Rare", "Common", "Common");
+
+function randImg()
+{
+	img = Math.floor((Math.random()*42)+1);
+	document.getElementById("image").src = "mammals/" + img + ".jpg";
+}
+
+function next()
+{
+	document.getElementById("flavor").innerHTML = "&nbsp;";
+	randImg();
+}
+
+function showFlavor()
+{
+	if (document.getElementById("nameType").value == "common")
+	{
+		document.getElementById("flavor").innerHTML = common[img-1];
+	}
+	if (document.getElementById("nameType").value == "scientific")
+	{
+		document.getElementById("flavor").innerHTML = scientific[img-1];
+	}
+	if (document.getElementById("nameType").value == "order")
+	{
+		document.getElementById("flavor").innerHTML = order[img-1];
+	}
+	if (document.getElementById("nameType").value == "family")
+	{
+		document.getElementById("flavor").innerHTML = family[img-1];
+	}
+	if (document.getElementById("nameType").value == "occurence")
+	{
+		document.getElementById("flavor").innerHTML = occurence[img-1];
+	}
+}
+</script>
+
+<div align="center"><a href="index.html" style="font-size:12px">Flashcards</a> <strong>eFlashcards</strong> <a href="../main/index.html" style="font-size:12px">Fieldguide</a></div>
+
+<div><form action="" method="get">
+<select id="nameType" name="nameType">
+<option value="common">Common Name</option>
+<option value="scientific">Scientific Name</option>
+<option value="order">Order</option>
+<option value="family">Family</option>
+<option value="occurence">Occurence</option>
+</select>
+
+<input type="button" onClick="showFlavor()" value="Reveal" />
+<input type="button" onClick="next()" value="Next" />
+</form></div>
+
+<p id="flavor">&nbsp;</p>
+
+<img src=" " id="image" />
+
+</div></body>
+</html>

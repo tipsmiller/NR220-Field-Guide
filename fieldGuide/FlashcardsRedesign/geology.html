@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Geology - eFlashcards</title>
+</head>
+<body onload="randImg()"><div align="center" style="padding-top:25px">
+
+<script>
+var img = 0;
+var common = new Array("plagioclase (Plagioclase Feldspar) (Mineral)", "plagioclase (Plagioclase Feldspar) (Mineral)", "basalt (Igneous)", "basalt (Igneous)", "biotite (Mineral)", "biotite (Mineral)", "breccia (Sedimentary)", "breccia (Sedimentary)", "conglomerate (Sedimentary)", "conglomerate (Sedimentary)", "granite (Igneous)", "granite (Igneous)", "plagioclase (Orthoclase Feldspar) (Mineral)", "plagioclase (Orthoclase Feldspar) (Mineral)", "muscovite (Mineral)", "muscovite (Mineral)", "muscovite (Mineral)", "pegmatite (Igneous)", "pegmatite (Igneous)", "quartz (Mineral)", "quartz (Mineral)", "quartz (Mineral)", "sandstone (Sedimentary)", "sandstone (Sedimentary)", "shale (Sedimentary)", "shale (Sedimentary)", "siltstone (Sedimentary)", "siltstone (Sedimentary)");
+var description = new Array("Hardness: hard (H greater than 5.5) scratches glass; Cleavage: good - at nearly right angles; Characteristics: white or gray, tends to split along right angles", "Hardness: hard (H greater than 5.5) scratches glass; Cleavage: good - at nearly right angles; Characteristics: white or gray, tends to split along right angles", "Texture: fine grains,  less than 1mm (aphanitic); Common Minerals: olivine, pyroxene, Calcium rich Plagioclase; Origin: rapid cooling of fluid lava", "Texture: fine grains,  less than 1mm (aphanitic); Common Minerals: olivine, pyroxene, Calcium rich Plagioclase; Origin: rapid cooling of fluid lava", "Hardness: soft (H greater than 5.5) does not scratch glass; Cleavage: excellent - along 1 plane; Characteristics: black, splits easily along one plane into sheets or flakes.", "Hardness: soft (H greater than 5.5) does not scratch glass; Cleavage: excellent - along 1 plane; Characteristics: black, splits easily along one plane into sheets or flakes.", "Grains: gravel (size: greater than 2mm); Composition: detrital: rock fragments which are angular", "Grains: gravel (size: greater than 2mm); Composition: detrital: rock fragments which are angular", "Grains: gravel (size: greater than 2mm); Composition: detrital: rock fragments which are rounded", "Grains: gravel (size: greater than 2mm); Composition: detrital: rock fragments which are rounded", "Texture: coarse grains,  1-10mm (phanertiuc); Common Minerals: quartz, potassium feldspar, muscovite, biotite; Origin: slow colling of viscous magma", "Texture: coarse grains,  1-10mm (phanertiuc); Common Minerals: quartz, potassium feldspar, muscovite, biotite; Origin: slow colling of viscous magma", "Hardness: hard (H greater than 5.5) scratches glass; Cleavage: good - at nearly right angles; Characteristics: shades of pink or gray, tends to split at right angles", "Hardness: hard (H greater than 5.5) scratches glass; Cleavage: good - at nearly right angles; Characteristics: shades of pink or gray, tends to split at right angles", "Hardness: soft (H less than 5.5) does not scratch glass; Cleavage: excellent - along 1 plane; Characteristics: colorless, splits easily along one plane into sheets or flakes", "Hardness: soft (H less than 5.5) does not scratch glass; Cleavage: excellent - along 1 plane; Characteristics: colorless, splits easily along one plane into sheets or flakes", "Hardness: soft (H less than 5.5) does not scratch glass; Cleavage: excellent - along 1 plane; Characteristics: colorless, splits easily along one plane into sheets or flakes", "Texture: very coarse grains, greater than 1cm (phaneritic); Common Minerals: quartz, potassium feldspar, muscovite; Origin: very slow cooling of viscous magma", "Texture: very coarse grains, greater than 1cm (phaneritic); Common Minerals: quartz, potassium feldspar, muscovite; Origin: very slow cooling of viscous magma", "Hardness: hard (H 7) scratches glass; Cleavage: poor or absent; Characteristics: colorless, white, gray or other colors", "Hardness: hard (H 7) scratches glass; Cleavage: poor or absent; Characteristics: colorless, white, gray or other colors", "Hardness: hard (H 7) scratches glass; Cleavage: poor or absent; Characteristics: colorless, white, gray or other colors", "Grains: sand (size: 1/16-2mm); Composition: detrital, mainly quartz and feldspar grains", "Grains: sand (size: 1/16-2mm); Composition: detrital, mainly quartz and feldspar grains", "Grains: silt or clay (size: 1/256-1/16mm); Composition: detrital,  mainly quartz and feldspar grains", "Grains: silt or clay (size: 1/256-1/16mm); Composition: detrital,  mainly quartz and feldspar grains", "Grains: mostly silt (size:1/256-1/16mm); Composition: detrital, mainly quartz and feldsapr grains and clay minerals", "Grains: mostly silt (size:1/256-1/16mm); Composition: detrital, mainly quartz and feldsapr grains and clay minerals");
+
+function randImg()
+{
+	img = Math.floor((Math.random()*28)+1);
+	document.getElementById("image").src = "geology/" + img + ".jpg";
+}
+
+function next()
+{
+	document.getElementById("flavor").innerHTML = "&nbsp;";
+	randImg();
+}
+
+function showFlavor()
+{
+	if (document.getElementById("nameType").value == "common")
+	{
+		document.getElementById("flavor").innerHTML = common[img-1];
+	}
+	if (document.getElementById("nameType").value == "description")
+	{
+		document.getElementById("flavor").innerHTML = description[img-1];
+	}
+}
+</script>
+
+<div align="center"><a href="index.html" style="font-size:12px">Flashcards</a> <strong>eFlashcards</strong> <a href="../main/index.html" style="font-size:12px">Fieldguide</a></div>
+
+<div><form action="" method="get">
+<select id="nameType" name="nameType">
+<option value="common">Name</option>
+<option value="description">Description</option>
+</select>
+
+<input type="button" onClick="showFlavor()" value="Reveal" />
+<input type="button" onClick="next()" value="Next" />
+</form></div>
+
+<p id="flavor">&nbsp;</p>
+
+<img src=" " id="image" />
+
+</div></body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Trees - eFlashcards</title>
+</head>
+<body onload="randImg()"><div align="center" style="padding-top:25px">
+
+<script>
+var img = 0;
+var common = new Array("subalpine fir", "subalpine fir", "subalpine fir", "subalpine fir", "thinleaf alder", "thinleaf alder", "thinleaf alder", "water birch", "water birch", "water birch", "Rocky Mountain juniper", "Rocky Mountain juniper", "Rocky Mountain juniper", "lodgepole pine", "lodgepole pine", "lodgepole pine", "lodgepole pine", "Engelmann spruce", "Engelmann spruce", "Engelmann spruce", "Engelmann spruce", "limber pine", "limber pine", "limber pine", "ponderosa pine", "ponderosa pine", "ponderosa pine", "Colorado blue spruce", "Colorado blue spruce", "Colorado blue spruce", "Colorado blue spruce", "narrowleaf cottonwood", "narrowleaf cottonwood", "quaking aspen", "quaking aspen", "quaking aspen", "quaking aspen", "chokecherry", "chokecherry", "chokecherry", "Douglas-fir", "Douglas-fir", "Douglas-fir", "Douglas-fir");
+var scientific = new Array("Abies lasiocarpa", "Abies lasiocarpa", "Abies lasiocarpa", "Abies lasiocarpa", "Alnus tenuifolia", "Alnus tenuifolia", "Alnus tenuifolia", "Betula occidentalis", "Betula occidentalis", "Betula occidentalis", "Juniperus scopulorum", "Juniperus scopulorum", "Juniperus scopulorum", "Pinus contorta", "Pinus contorta", "Pinus contorta", "Pinus contorta", "Picea engelmannii", "Picea engelmannii", "Picea engelmannii", "Picea engelmannii", "Pinus flexilis", "Pinus flexilis", "Pinus flexilis", "Pinus ponderosa", "Pinus ponderosa", "Pinus ponderosa", "Picea pungens", "Picea pungens", "Picea pungens", "Picea pungens", "Populus angustifolia", "Populus angustifolia", "Populus tremuloides", "Populus tremuloides", "Populus tremuloides", "Populus tremuloides", "Prunus virginiana", "Prunus virginiana", "Prunus virginiana", "Pseudotsuga menziesii", "Pseudotsuga menziesii", "Pseudotsuga menziesii", "Pseudotsuga menziesii");
+var description = new Array("Leaves single, flat, NO sterigmata, circular leaf scar (resemble suction cups where attached to twig).  Cones erect, small (2-3 inches), deciduous scales, purplish in color.   Buds yellowish-green, spherical.  Form is often spirelike", "Leaves single, flat, NO sterigmata, circular leaf scar (resemble suction cups where attached to twig).  Cones erect, small (2-3 inches), deciduous scales, purplish in color.   Buds yellowish-green, spherical.  Form is often spirelike", "Leaves single, flat, NO sterigmata, circular leaf scar (resemble suction cups where attached to twig).  Cones erect, small (2-3 inches), deciduous scales, purplish in color.   Buds yellowish-green, spherical.  Form is often spirelike", "Leaves single, flat, no sterigmata, circular leaf scar (resemble suction cups where attached to twig). Cones erect,small (5-7 cm), deciduous scales, purplish in color. Buds yellowish-green, spherical.  Form is often spirelike.", "Leaves simple, alternate, strongly doubly serrate.  Strobili persistent (look like miniature pine cones when mature).  Twigs smooth to the touch (compared to Betula occidentalis).  Grows along streams with water birch", "Leaves simple, alternate, strongly doubly serrate.  Strobili persistent (look like miniature pine cones when mature).  Twigs smooth to the touch (compared to Betula occidentalis).  Grows along streams with water birch.", "Leaves simple, alternate, strongly doubly serrate.  Strobili persistent (look like miniature pine cones when mature).  Twigs smooth to the touch (compared to Betula occidentalis).  Grows along streams with water birch", "Leaves simple, alternate, irregularly serrate.  Strobili deciduous.  Twigs rough (sandpapery).  Grows along streams with thinleaf alder", "Leaves simple, alternate, irregularly serrate.  Strobili deciduous.  Twigs rough (sandpapery).  Grows along streams with thinleaf alder", "Leaves simple, alternate, irregularly serrate.  Strobili deciduous.  Twigs rough (sandpapery).  Grows along streams with thinleaf alder.", "Mature leaves scalelike, appressed, opposite and 4-ranked.  Cones small, berry-like.  Small tree on dryer sites", "Mature leaves scalelike, appressed, opposite and 4-ranked.  Cones small, berry-like.  Small tree on dryer sites", "Mature leaves scalelike, appressed, opposite and 4-ranked.  Cones small, berry-like.  Small tree on dryer sites.", "leaves needlelike, fascicles (bundles) of 2, short.  Cones small, knoblike basal scales, armed with small prickles, often remain closed (serotinous). Trees grow in evenaged stands.", "leaves needlelike, fascicles (bundles) of 2, short.  Cones small, knoblike basal scales, armed with small prickles, often remain closed (serotinous). Trees grow in evenaged stands.", "leaves needlelike, fascicles (bundles) of 2, short.  Cones small, knoblike basal scales, armed with small prickles, often remain closed (serotinous). Trees grow in evenaged stands.", "leaves needlelike, fascicles (bundles) of 2, short.  Cones small, knoblike basal scales, armed with small prickles, often remain closed (serotinous). Trees grow in evenaged stands.", "leaves single, stiff, sit on sterigmata, not too sharp.  Cones small, papery scales. Twigs pubescent (hairy).  Primary associate of subalpine fir.", "leaves single, stiff, sit on sterigmata, not too sharp.  Cones small, papery scales. Twigs pubescent (hairy).  Primary associate of subalpine fir.", "leaves single, stiff, sit on sterigmata, not too sharp.  Cones small, papery scales. Twigs pubescent (hairy).  Primary associate of subalpine fir.", "leaves single, stiff, sit on sterigmata, not too sharp.  Cones small, papery scales. Twigs pubescent (hairy).  Primary associate of subalpine fir.", "leaves needlelike, fascicles (bundles) of 5, short.  Cones with thick scales, no prickles.  Newer twigs are fairly flexible (bendable).  Grows on dry rocky sites at high elevations.", "leaves needlelike, fascicles (bundles) of 5, short.  Cones with thick scales, no prickles.  Newer twigs are fairly flexible (bendable).  Grows on dry rocky sites at high elevations.", "leaves needlelike, fascicles (bundles) of 5, short.  Cones with thick scales, no prickles.  Newer twigs are fairly flexible (bendable).  Grows on dry rocky sites at high elevations.", "leaves needlelike, fascicles (bundles) of 2's and 3's, longer than lodgepole or limber pine. Cones generally open and fall to ground, have very sharp prickles on scales.  Bark thick, orangish in color, smells like vanilla/butterscotch/cream soda (depending on who you consult).", "leaves needlelike, fascicles (bundles) of 2's and 3's, longer than lodgepole or limber pine. Cones generally open and fall to ground, have very sharp prickles on scales.  Bark thick, orangish in color, smells like vanilla/butterscotch/cream soda (depending on who you consult).", "leaves needlelike, fascicles (bundles) of 2's and 3's, longer than lodgepole or limber pine. Cones generally open and fall to ground, have very sharp prickles on scales.  Bark thick, orangish in color, smells like vanilla/butterscotch/cream soda (depending on who you consult).", "leaves single, very stiff and sharp, sit on sterigmata.  Cones with papery scales, larger than Engelmann spruce cones.  Twigs glabrous (lack hairs).  Usually lower elevation than Engelmann spruce. Associates include ponderosa pine, Douglas-fir", "leaves single, very stiff and sharp, sit on sterigmata.  Cones with papery scales, larger than Engelmann spruce cones.  Twigs glabrous (lack hairs).  Usually lower elevation than Engelmann spruce. Associates include ponderosa pine, Douglas-fir", "leaves single, very stiff and sharp, sit on sterigmata.  Cones with papery scales, larger than Engelmann spruce cones.  Twigs glabrous (lack hairs).  Usually lower elevation than Engelmann spruce. Associates include ponderosa pine, Douglas-fir", "leaves single, very stiff and sharp, sit on sterigmata.  Cones with papery scales, larger than Engelmann spruce cones.  Twigs glabrous (lack hairs).  Usually lower elevation than Engelmann spruce. Associates include ponderosa pine, Douglas-fir", "leaves simple, alternate, lanceolate.  Large terminal buds with overlapping scales.  Fruit is a drooping catkin.  Young bark smooth, greenish white.   Likes water (stream banks)", "leaves simple, alternate, lanceolate.  Large terminal buds with overlapping scales.  Fruit is a drooping catkin.  Young bark smooth, greenish white.   Likes water (stream banks)", "Leaves simple, alternate, nearly circular.  Petiole flattened.  Buds with overlapping scales.  Fruit is a drooping catkin.  Bark is white, chalky.", "Leaves simple, alternate, nearly circular.  Petiole flattened.  Buds with overlapping scales.  Fruit is a drooping catkin.  Bark is white, chalky", "Leaves simple, alternate, nearly circular.  Petiole flattened.  Buds with overlapping scales.  Fruit is a drooping catkin.  Bark is white, chalky", "Leaves simple, alternate, nearly circular.  Petiole flattened.  Buds with overlapping scales.  Fruit is a drooping catkin.  Bark is white, chalky", "Leaves simple, alternate, small teeth, two glands on petiole near leaf blade. Often a large shrub", "Leaves simple, alternate, small teeth, two glands on petiole near leaf blade. Often a large shrub", "Leaves simple, alternate, small teeth, two glands on petiole near leaf blade. Often a large shrub", "leaves single, petiole-like constricted base.  Cones have 3-pronged exserted bract.  Buds reddish brown, pointed", "leaves single, petiole-like constricted base.  Cones have 3-pronged exserted bract.  Buds reddish brown, pointed", "leaves single, petiole-like constricted base.  Cones have 3-pronged exserted bract.  Buds reddish brown, pointed", "leaves single, petiole-like constricted base.  Cones have 3-pronged exserted bract.  Buds reddish brown, pointed");
+
+function randImg()
+{
+	img = Math.floor((Math.random()*44)+1);
+	document.getElementById("image").src = "trees/" + img + ".jpg";
+}
+
+function next()
+{
+	document.getElementById("flavor").innerHTML = "&nbsp;";
+	randImg();
+}
+
+function showFlavor()
+{
+	if (document.getElementById("nameType").value == "common")
+	{
+		document.getElementById("flavor").innerHTML = common[img-1];
+	}
+	if (document.getElementById("nameType").value == "scientific")
+	{
+		document.getElementById("flavor").innerHTML = scientific[img-1];
+	}
+	if (document.getElementById("nameType").value == "description")
+	{
+		document.getElementById("flavor").innerHTML = description[img-1];
+	}
+}
+</script>
+
+<div align="center"><a href="index.html" style="font-size:12px">Flashcards</a> <strong>eFlashcards</strong> <a href="../main/index.html" style="font-size:12px">Fieldguide</a></div>
+
+<div><form action="" method="get">
+<select id="nameType" name="nameType">
+<option value="common">Common Name</option>
+<option value="scientific">Scientific Name</option>
+<option value="description">Description</option>
+</select>
+
+<input type="button" onClick="showFlavor()" value="Reveal" />
+<input type="button" onClick="next()" value="Next" />
+</form></div>
+
+<p id="flavor">&nbsp;</p>
+
+<img src=" " id="image" />
+
+<p>MISSING PICTURES: prvi-flower.jpg, prvi-fruit.jpg, prvi-leaf.jpg<br />
+SHOULD BE TITLED: 38.jpg, 39.jpg, 40.jpg</p>
+
+</div></body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Fish - eFlashcards</title>
+</head>
+<body onload="randImg()"><div align="center" style="padding-top:25px">
+
+<script>
+var img = 0;
+var common = new Array("creek chub", "longnose dace", "longnose sucker", "white sucker", "yellow perch", "brook trout", "rainbow trout", "fathead minnow", "greenback cutthroat trout", "brown trout", "mountain whitefish");
+var scientific = new Array("Semotilus atromaculatus", "Rhinichthys cataractae", "Catostomus catostomus", "Catostomus commersoni", "Perca flavescens", "Salvelinus  fontinalis", "Oncorhynchus mykiss", "Pimephales promelas", "Oncorhynchus clarki stomias", "Salmo trutta", "Prosopium williamsoni");
+var family = new Array("Minnows - Fins without spines", "Minnows - Fins without spines", "Suckers - Fins without spines", "Suckers - Fins without spines", "Perch-like fishes - Fins with spines", "Trout and Salmon - Fins without spines", "Trout and Salmon - Fins without spines", "Minnows - Fins without spines", "Trout and Salmon - Fins without spines", "Trout and Salmon - Fins without spines", "Trout and Salmon - Fins without spines");
+var description = new Array("large, terminal mouth; small barbel present; spot at anterior insertion of dorsal fin; juveniles: dark lateral band and spot on tail", "adults small; small barbel at corner of mouth; subterminal mouth; small eye; no groove between premaxillary and snout (frenum present)", "Fine scales,  > 80 LLS; long, pointed snout;axillary process present", "Large scales, < 80 LLS; 3 spots on side of juveniles; axillary process present", "sides bright yellow to brassy green with 7 dark vertical bars; lighter belly and dark olive green back", "light spots on dark background; blue halos around reddish spots on sides; white edge on pectoral, pelvic, and anal fins; dorsal vermiculations; slightly forked tail", "dark spots on head, body and tail; lacks basibranchial teeth", "small adult body size (< 100 mm TL); dorsal scales crowded toward head; black pigment between myomeres; first dorsal ray a splint, half length of 2nd", "large dark spots concentrated posteriorly; few spots on head; basibranchial teeth present", "many spots on head, few on tail; many spots on gill cover; no white edge to fins", "subterminal mouth; pointed snout; relatively large scales; large adipose fin; nostril septa (flaps) single; body rounded in cross section");
+var anatomical = new Array("AFR=8,BR=,LLS=53-61,PC=,PT=2,5-4,2; 2,4-4,2; 2,4-5,2", "AFR=7,BR=,LLS=58-76,PC=,PT=2,4-4,2; 1,4-4,1; 1,4-4,0", "AFR=7,BR=,LLS=99-108,PC=,PT=", "AFR=7,BR=,LLS=65-75,PC=,PT=", "AFR=II,8,BR=,LLS=54-60,PC=,PT=", "AFR=9-13,BR=,LLS=197-230,PC=23-55,PT=", "AFR=8-12 PC=,BR=,LLS=100-150,PC=27-80,PT=", "AFR=7,BR=,LLS=41-54,PC=,PT=0,4-4,0", "AFR=8-12,BR=,LLS=>185,PC=,PT=", "AFR=10-12,BR=10,LLS=120-130,PC=,PT=", "AFR=11-13,BR=,LLS=73-90,PC=,PT=");
+
+function randImg()
+{
+	img = Math.floor((Math.random()*11)+1);
+	document.getElementById("image").src = "fish/" + img + ".jpg";
+}
+
+function next()
+{
+	document.getElementById("flavor").innerHTML = "&nbsp;";
+	randImg();
+}
+
+function showFlavor()
+{
+	if (document.getElementById("nameType").value == "common")
+	{
+		document.getElementById("flavor").innerHTML = common[img-1];
+	}
+	if (document.getElementById("nameType").value == "scientific")
+	{
+		document.getElementById("flavor").innerHTML = scientific[img-1];
+	}
+	if (document.getElementById("nameType").value == "family")
+	{
+		document.getElementById("flavor").innerHTML = family[img-1];
+	}
+	if (document.getElementById("nameType").value == "description")
+	{
+		document.getElementById("flavor").innerHTML = description[img-1];
+	}
+	if (document.getElementById("nameType").value == "anatomical")
+	{
+		document.getElementById("flavor").innerHTML = anatomical[img-1];
+	}
+}
+</script>
+
+<div align="center"><a href="index.html" style="font-size:12px">Flashcards</a> <strong>eFlashcards</strong> <a href="../main/index.html" style="font-size:12px">Fieldguide</a></div>
+
+<div><form action="" method="get">
+<select id="nameType" name="nameType">
+<option value="common">Common Name</option>
+<option value="scientific">Scientific Name</option>
+<option value="family">Family</option>
+<option value="description">Description</option>
+<option value="anatomical">Anatomical Char.</option>
+</select>
+
+<input type="button" onClick="showFlavor()" value="Reveal" />
+<input type="button" onClick="next()" value="Next" />
+</form></div>
+
+<p id="flavor">&nbsp;</p>
+
+<img src=" " id="image" />
+
+</div></body>
+</html>

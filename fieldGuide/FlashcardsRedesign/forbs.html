@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Forbs - eFlashcards</title>
+</head>
+<body onload="randImg()"><div align="center" style="padding-top:25px">
+
+<script>
+var img = 0;
+var common = new Array("western yarrow", "western yarrow", "alpine avens", "alpine avens", "Rocky Mountain pussytoes", "heartleaf arnica", "heartleaf arnica", "fringed sagebrush", "fringed sagebrush", "cudweed sagewort", "cudweed sagewort", "locoweed (milk vetch)", "bistort", "bistort", "fireweed", "hairy goldenaster", "hairy goldenaster", "low larkspur", "mountain dryad", "Fendler sandwort", "daisy", "sulfur-flower", "sulfur-flower", "western wallflower", "strawberry", "bedstraw", "geranium", "dwarf sunflower", "lupine", "bluebell", "crazyweed", "penstemon", "cinquefoil", "cinquefoil", "pasque flower", "wintergreen", "yellow stonecrop", "goldenrod", "golden banner", "alpine clover", "parsley (whisk broom)");
+var scientific = new Array("Achillea lanulosa", "Achillea lanulosa", "Acomastylis rossii", "Acomastylis rossii", "Antennaria parvifolia", "Arnica cordifolia", "Arnica cordifolia", "Artemisia frigida", "Artemisia frigida", "Artemisia ludoviciana", "Artemisia ludoviciana", "Astragalus spp.", "Bistorta bistortoides", "Bistorta bistortoides", "Chamerion angustifolium", "Chrysopsis villosa", "Chrysopsis villosa", "Delphinium nuttallianum", "Dryas octopetala", "Eremogone fendleri", "Erigeron spp.", "Eriogonum umbellatum", "Eriogonum umbellatum", "Erysimum asperum", "Fragaria ovalis", "Galium boreale", "Geranium spp.", "Helianthus pumilus", "Lupinus argenteus", "Mertensia spp.", "Oxytropis lambertii", "Penstemon spp.", "Potentilla spp.", "Potentilla spp.", "Pulsatilla patens", "Pyrola spp.", "Sedum lanceolatum", "Solidago spp.", "Thermopsis divaricarpa", "Trifolium parryi", "Harbouria trachypleura");
+var description = new Array("White composite flowers, ubiquitous, fern-like leaves, aromatic odor", "White composite flowers, ubiquitous, fern-like flowers, aromatic odor", "Yellow flowered, rose family, common on alpine tundra, responsible for the deep red in Autumn, leaves compound", "Yellow flowered, rose family, common on alpine tundra, responsible for the deep red in Autumn, leaves compound", "White flowers, low-growing forb, grey leaves, heads of flowers resemble pads on cat's feet", "Yellow flowers, heart-shaped leaves, opposite leaves", "Yellow flowers, Heart-shaped leaves, opposite leaves", "Smells like sagebrush, grayish-green color, half shrub, increaser species", "Smells like sagebrush, grayish-green color, half shrub, increaser species", "Rhizomatous, .3-1.5 m tall, leaves: alternate-simple- irregularly lobed, densely pubescent", "Rhizomatous, .3-1.5 m tall, leaves: alternate-simple-irregularly lobed, densely pubescent", "-Many species toxic to animals, some are good forage. -Flowers variable in color. -Leaves found on the flowering stems, pinnately disected -Keel petals are blunt", "-Flower white or pinkish -Flowers in terminal clusters -Large, fleshy rootstock -Basel leaves oblanceolate", "- Flower white or pinkish - Flowers in terminal clusters - Large, fleshy roostock - Basal leaves oblanceolate", "-Bright purple flowers -Back side of leaf has 1 conspicuous vein -Common in clearcuts, especially after fire -Linear leaves", "-Hairs on stems. -Yellow composite flowers. -Alternate leaves. -Reddish stems. -Increaser species.", "- Hairs on stems - Yellow composite flowers - Alternate leaves - Reddish stems - Increaser species", "-Poisonous to cattle, especially in spring. -Low growing leaves. -Blue flowers with spurs.", "-Leaves alternate, simple. -Flowers solitary on naked puduncle. -Petals white, eight.", "-Forb that closely resembles a grass. -Very fine linear leaves. -Sharp points on tips of leaves. -White flowers.", "-Small linear leaves. -White composite flowers. -Fine hairs on foliage. -One species, Erigeron melanocephalus is found in the alpine.", "-Umbel-type inflorescence. -Leaves at base of plant. -Brachts at base of inflorescence. -Stolons. -Stems are reddish color.", "- Umbel-type inflorescence - Leaves at base of plant - Brachts at base of inflorescence - Stolons - Stems are reddish color", "-Biennial mustard. -Yellow flowers. -Fish hook subdivisions on leaves.", "-Grows in most environments. Runners (i.e., stolons). -Leaf divided into 3 leaflets. -White flowers. -Narrow, linear leaflets.", "-Square stem -Small white flowers. -Leaves in a whorl originating from each side of the stem.", "-White to purple flowers. -Leaves with long petioles, sticky hairs on foliage. -Palmately divided leaves.", "- Common on disturbed sites - Invader species - Mostly opposite leaves - Course hairs - Sunflower appearance", "- Many lupines are poisonous - Palmately divided leaves - White-blue flowers", "-Generally grows in moist sites - Waxy leaf - Fleshy feel to plant - Blue flowers", "- Poisonous to most herbivores, especially horses - Purple flowers with is pointed keel petals - Flower stalks do not support leaves (i.e.,scape) - Leaves pinnately compound", "Purplish-blue flowers - Irregular, 5-petalled flowers - Opposite leaves - Leaves waxy, tend to be folded", "- Leaves variable - Grey to greenish colored leaves - Yellow flowers - Leaves end in 3 leaflets", "- Leaves variable - Grey to greenish colored leaves - Yellow flowers - Leaves end in 3 leaflets", "- Leaves palmately divided - Fine hairs on leaves - Flowers early in summer - Reddish stem", "- Low-growing plant - Evergreen leaves with serrated margins - Leathery leaves - Leaves oval to spatulate - Common in understory of forest", "- Succulent, fleshy leaves - Yellow flowers", "- Yellow flowers - Netted venation on leaves - Very common plant in forest understory", "- Yellow flowers - Leaves divided into 3 leaflets - Leaflets with yellow veins", "- Leaves palmately trifoliate - Flowers in heads - Petal rosey or purple", "-Looks like dill -Umbel inflorescence -Yellow flowers -Narrow, linear leaflets.");
+
+function randImg()
+{
+	img = Math.floor((Math.random()*41)+1);
+	document.getElementById("image").src = "forbs/" + img + ".jpg";
+}
+
+function next()
+{
+	document.getElementById("flavor").innerHTML = "&nbsp;";
+	randImg();
+}
+
+function showFlavor()
+{
+	if (document.getElementById("nameType").value == "common")
+	{
+		document.getElementById("flavor").innerHTML = common[img-1];
+	}
+	if (document.getElementById("nameType").value == "scientific")
+	{
+		document.getElementById("flavor").innerHTML = scientific[img-1];
+	}
+	if (document.getElementById("nameType").value == "description")
+	{
+		document.getElementById("flavor").innerHTML = description[img-1];
+	}
+}
+</script>
+
+<div align="center"><a href="index.html" style="font-size:12px">Flashcards</a> <strong>eFlashcards</strong> <a href="../main/index.html" style="font-size:12px">Fieldguide</a></div>
+
+<div><form>
+<select id="nameType" name="nameType">
+<option value="common">Common Name</option>
+<option value="scientific">Scientific Name</option>
+<option value="description">Description</option>
+</select>
+
+<input type="button" onClick="showFlavor()" value="Reveal" />
+<input type="button" onClick="next()" value="Next" />
+</form></div>
+
+<p id="flavor">&nbsp;</p>
+
+<img src=" " id="image" />
+
+<p>MISSING PHOTO FOR STRAWBERRY: f-38-a.jpg<br />
+RENAME TO: 25.jpg</p>
+
+</div></body>
+</html>
